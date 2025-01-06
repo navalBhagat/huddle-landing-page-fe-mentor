@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Open+Sans:wght@400&display=swap');
+
+
+/* Variables */ 
+
+$poppins: "Poppins", sans-serif;
+$openSans: 'Open Sans', sans-serif;
+$violet: hsl(257,40%,49%);
+$magenta: hsl(300, 69%, 71%);
+$fontSize: 1rem; 
+$medium: 400; 
+$heavy: 600;
+$bgDesktop: "/images/bg-desktop.svg";
+$bgMobile: "/images/bg-mobile.svg";
+
+/* Desktop design */ 
+
+html { 
+  background-color: $violet;
+  font-size: $fontSize;
+  font-family: $poppins;
+  background-image: url($bgDesktop);
+  background-repeat: no-repeat;
+  background-size: 91.6%;
+  background-attachment: fixed;
+  background-position: 0 0;
+  color: white;
+
+  body { 
+    width: inherit;
+    height: inherit;
+    margin: 0;
+
+    #root { 
+      width: inherit;
+      height: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-evenly;
+      padding: 0rem 4.5rem;
+      position: relative;
+
+      header { 
+        width: fit-content;
+        height: fit-content;
+        margin-top: 3.3rem;
+        img { 
+          width: 13.5rem;
+        }
+      }
+
+      main { 
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: 4.7rem;
+
+        section { 
+          margin-left: 3.5rem;
+          display: flex;
+          justify-content: space-around;
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 1.35rem;
+          margin-top: 2.5rem;
+          margin-right: 0.5rem;
+
+          h1 { 
+            font-size: 2.5rem;
+            font-weight: $heavy;
+            margin: 0;
+          }
+
+          p { 
+            font-size: 1.15rem;
+            font-weight: $medium;
+            line-height: 1.7rem;
+            margin: 0;
+            color: hsla(0, 0%, 100%, 0.7);
+            font-family: $openSans;
+          }
+
+          button { 
+            border: none; 
+            border-radius: 2rem;
+            height: 3.4rem;
+            width: 13rem;
+            margin: 0;
+            color: $violet;
+            font-size: 1.15rem;
+            cursor: pointer;
+            box-shadow: 0rem 0rem 0.9rem hsl(257,40%,30%);
+
+            &:hover { 
+              background-color: $magenta;
+              color: hsla(0, 0%, 100%, 0.7);
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+        position: absolute;
+        bottom: -4rem;
+        right: 4.5rem;
+
+
+        nav {
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+
+                li {
+                    border-radius: 50%;
+                    border: 1.5px solid lightgray;
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+
+                    &:hover {
+                        border-color: hsl(300, 69%, 60%);
+                        cursor: pointer;
+
+                        i {
+                            color: hsl(300, 69%, 60%);
+                        }
+                    }
+
+                    a {
+                        color: white;
+
+                        i { 
+                          font-size: 1.1rem;
+                        }
+                    }
+                }
+            }
+        }
+      }
+    }
+  }
+}
+
+/* Mobile design */ 
+@media (max-width:1200px) {
+  html { 
+    background-image: url($bgMobile);
+    background-size: 100%; 
+    width: 100%;
+    height: fit-content;
+
+    body { 
+
+      #root { 
+        padding: 2rem 2rem;
+        width: auto;
+        gap: 2rem;
+
+        header { 
+          margin-top: unset; 
+          img { 
+            width: 8rem;
+          }
+        }
+
+        main { 
+          flex-direction: column;
+          align-items: center;
+          margin-top: 3rem;
+          width: 100%;
+          margin: unset;
+
+          img { 
+            width: 19.1rem;
+            margin-top: 1.2rem;
+          }
+
+          section { 
+            margin: unset;
+            align-items: center;
+            text-align: center;
+            margin-top: 3rem;
+
+            h1 { 
+              font-size: 1.5rem;
+            }
+
+            p { 
+              font-size: 1.02rem;
+              text-align: center;
+            }
+
+            button { 
+              height: 2.5rem;
+              font-size: 0.8rem;
+            }
+          }
+        }
+
+        footer { 
+          position: unset;
+          padding-left: 32.5%;
+          margin-bottom: 1rem;
+
+          nav { 
+            ul { 
+              li {
+                height: 1.6rem;
+                width: 1.6rem;
+                justify-content: center;
+                display: flex;
+                align-items: center;
+
+                 a { 
+                  i { 
+                    font-size: 0.95rem;;
+                  }
+                 }
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+/* Media queries */ 
+
+// @media (max-width: 1439px) {
+//     html { 
+//       background-size: cover;
+//     }
+// }
+
+@media (min-height:801px) {
+  html { 
+    background-size: cover;
+  }
+}
